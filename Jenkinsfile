@@ -25,8 +25,7 @@ stage('build container') {
 
 		stage('test server') {
 			steps {
-				sh
-				"""
+				sh """
 					for i in {1..10}; do
 						curl -s http://localhost:8000/ && break
 						sleep 2
