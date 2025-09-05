@@ -31,6 +31,7 @@ pipeline {
 							break
 						fi
 						echo "waiting for server to start!!!!"
+						sleep 2
 					done
 				"""
 			}
