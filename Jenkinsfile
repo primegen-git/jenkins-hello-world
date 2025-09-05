@@ -26,8 +26,8 @@ pipeline {
 				sh """
 					for i in {1..10}; do
 						RESPONSE=\$(http://localhost:8000/)
-						if [! -z "$RESPONSE" ]; then
-							echo "fastapi reponse: $RESPONSE"
+						if [ ! -z "\$RESPONSE" ]; then
+							echo "fastapi reponse: \$RESPONSE"
 							break
 						fi
 						echo "waiting for server to start!!!!"
