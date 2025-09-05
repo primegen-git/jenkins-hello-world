@@ -25,7 +25,7 @@ pipeline {
 			steps {
 				sh """
 					for i in {1..10}; do
-						RESPONSE=\$(http://localhost:8000/)
+						RESPONSE=\$(curl -s http://localhost:8000/)
 						if [ ! -z "\$RESPONSE" ]; then
 							echo "fastapi reponse: \$RESPONSE"
 							break
