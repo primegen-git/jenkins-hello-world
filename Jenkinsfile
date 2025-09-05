@@ -1,7 +1,5 @@
 pipeline {
-	agent {
-		docker {image 'python:3.11-slim'}
-	}
+	agent any // so that jenkins can use the docker-ce-cli that is being installed with custom jenkins dockerfile.
 
 	stages {
 		stage('checkout') {
@@ -10,7 +8,7 @@ pipeline {
 			}
 
 		}
-stage('build container') {
+		stage('build container') {
 			steps {
 				sh 'docker build -t jenkins-fastapi .'
 			}
