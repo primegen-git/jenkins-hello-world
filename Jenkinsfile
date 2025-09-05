@@ -19,7 +19,7 @@ stage('build container') {
 
 		stage('Run container') {
 			steps {
-				sh 'docker run -d -p 8000:8000 --name jenkins-fastapi jenkins-fastapi-container'
+				sh 'docker run -d -p 8000:8000 --name jenkins-fastapi-container jenkins-fastapi'
 			}
 		}
 
