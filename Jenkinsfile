@@ -25,10 +25,13 @@ pipeline {
 			steps {
 				sh """
 					for i in {1..10}; do
-						curl -s http://localhost:8000/ && break
-						sleep 2
+						RESPONSE=\$(http://localhost:8000/)
+						if [! -z "$RESPONSE" ]; then
+							echo "fastapi reponse: $RESPONSE"
+							break
+						fi
+						echo "waiting for server to start!!!!"
 					done
-
 				"""
 			}
 		}
